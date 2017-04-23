@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,Disqus," />
+  <meta name="keywords" content="Hexo,Disqus,WordCount," />
 
 
 
@@ -90,17 +90,20 @@
 
 
 
-<meta name="description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决">
-<meta name="keywords" content="Hexo,Disqus">
+<meta name="description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
+<meta name="keywords" content="Hexo,Disqus,WordCount">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 优化 Blog 设置">
 <meta property="og:url" content="http://yoursite.com/2017/04/22/Hexo 优化 Blog 设置/index.html">
 <meta property="og:site_name" content="梅一树">
-<meta property="og:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决">
-<meta property="og:updated_time" content="2017-04-23T20:41:13.000Z">
+<meta property="og:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/24/58fd190976f8f.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/24/58fd220bd5af5.png">
+<meta property="og:updated_time" content="2017-04-23T22:16:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 优化 Blog 设置">
-<meta name="twitter:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决">
+<meta name="twitter:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/04/24/58fd190976f8f.png">
 
 
 
@@ -351,28 +354,38 @@
           
           
 
-<span class="post-time">
-&nbsp; | &nbsp;
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">字数统计: </span>
-<span class="post-count">543 (字)</span>
-
-</span>
-
-<span class="post-time">
-&nbsp; | &nbsp;
-<span class="post-meta-item-icon">
-<i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">阅读时长: </span>
-<span class="post-count">2 (分)</span>
-
-</span>
-
           
 
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  830 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -387,9 +400,8 @@
       
 
       
-        <p><strong> Disqus 评论设置问题，NexT 下不用添加 Universal Code </strong><br><strong> 利用好 <code>hexo server</code> 命令 </strong><br><strong> footer 不能固定在底端 bug 解决 </strong></p>
-<a id="more"></a>
-<p>花了很长时间设置成功。<strong>期间因未能利用好「本地预览」功能而走入误区</strong></p>
+        <p><strong> Disqus 评论设置问题，NexT 下不用添加 Universal Code </strong><br><strong> 利用好 <code>hexo server</code> 命令 </strong><br><strong> footer 不能固定在底端 bug 解决 </strong><br><strong> WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写 </strong><br><strong> 「 Template render error 」问题 </strong><br><a id="more"></a></p>
+<h2 id="1-Disqus-评论区"><a href="#1-Disqus-评论区" class="headerlink" title="1. Disqus 评论区"></a>1. Disqus 评论区</h2><p>花了很长时间设置成功。<strong>期间因未能利用好「本地预览」功能而走入误区</strong></p>
 <pre><code>`hexo clean &amp;&amp; hexo g &amp;&amp; hexo s`
 </code></pre><p>之前对于 <code>hexo s</code> 与 <code>hexo d</code> 命令没有明确的区别意识，也不熟悉搭建 Blog 的体系。总是直接 deploy 然后多刷新几遍，结果让延迟效果把自己弄得混乱。幸好及时意识到错误，检查修改代码的工作量也不大。第一次加载 Disqus 时的延迟让我以为需要添加 Universal Code 才可实现，但如果使用 <code>hexo s</code> 指令，则会看到「评论区」已然在<strong>「非首页」</strong>的页面里出现。再次多处尝试添加 Universal Code 给我自己造成了很大的混乱，最后还得一一删除。</p>
 <p>所以设置 Disqus 只需要在其官网创帐号，add to your site 然后设置相关 URL、shortname 等，再回到本地修改 _config.yml 文件。我分别在站点和 themes 里的两个 _config.yml 都添加修改了相关内容，前者添加shortname，后者在 disqus 字段里 enable 并填写 shortname 即可。</p>
@@ -397,6 +409,14 @@
 <p>评论区域修改好了。我的 footer 位置又出了问题，「所有文章」里的 footer 都未能固定在底端，如果文章长度超出屏幕需要滚动阅览，footer 则会停留在原本的屏幕下方，也就是遮盖在文章中间。可以锁定是 post 相关文件的错误。搜索查询发现相关问题很少，相似经历更少且没找到有效solution（缩小范围到自己 code 问题），又尝试了删除改动 footer 未果，我意识到可能是因我之前乱添 Universal Code 遗留的问题，很大可能误删或者少删了内容。</p>
 <p>于是我打开 NexT 主题在 GitHub 上的相关代码对照了两个文件，果然发现少删除一个 <code>&lt;/div&gt;</code> 造成区域混乱。</p>
 <p>问题解决。Disqus 成功添加。</p>
+<h2 id="2-字数统计-wordcount-插件"><a href="#2-字数统计-wordcount-插件" class="headerlink" title="2. 字数统计 wordcount 插件"></a>2. 字数统计 wordcount 插件</h2><p>使用 <code>npm i hexo-wordcount --save</code> 命令安装插件。</p>
+<h3 id="a-文章字数"><a href="#a-文章字数" class="headerlink" title="a. 文章字数"></a>a. 文章字数</h3><p>在 themes/next/layout/_macro 里打开 post.swig 检索 wordcount 可以找到相关段落。</p>
+<p><img src="https://ooo.0o0.ooo/2017/04/24/58fd190976f8f.png" alt="wordcount.png"><br>可以自定义修改 或者 不修改。此段代码让 wordcount 相关内容显示在文章标题栏中。</p>
+<p><strong>然后在 themes 里的 _config.yml 里 enable「 wordcount 」和「 min2read 」, 即可成功。否则不会显示！</strong> </p>
+<h3 id="b-网站总字数"><a href="#b-网站总字数" class="headerlink" title="b. 网站总字数"></a>b. 网站总字数</h3><p>在 themes/next/layout/_partials 里找到 footer.swig，此文件代码少而简单，很好理解。在主题字段后面（ 也就是最后一行 endif 上面 ）添加计数语句</p>
+<p><img src="https://ooo.0o0.ooo/2017/04/24/58fd220bd5af5.png" alt="footer.png"></p>
+<p>即可。</p>
+<p>另外，在上传此文章到服务器时，曾遇到「 Template render error 」问题，最后锁定是「 totalcount 」字段问题，皆因我开始并没有截图而是直接把 code 搬过来，再用「｀」符号（英文状态下）扩起来形成代码格式。此格式遇到 PHP 代码时可能造成混乱，用「｀」拆分字段也无法解决。换成截图就可以了。</p>
 
       
     </div>
@@ -429,6 +449,8 @@
             <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
             <a href="/tags/Disqus/" rel="tag"># Disqus</a>
+          
+            <a href="/tags/WordCount/" rel="tag"># WordCount</a>
           
         </div>
       
@@ -504,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -542,7 +573,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -567,6 +598,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Disqus-评论区"><span class="nav-number">1.</span> <span class="nav-text">1. Disqus 评论区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-字数统计-wordcount-插件"><span class="nav-number">2.</span> <span class="nav-text">2. 字数统计 wordcount 插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-文章字数"><span class="nav-number">2.1.</span> <span class="nav-text">a. 文章字数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-网站总字数"><span class="nav-number">2.2.</span> <span class="nav-text">b. 网站总字数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -602,6 +649,11 @@
     NexT.Muse
   </a>
 </div>
+
+<div class="theme-info"> <div class="powered-by"></div>
+<span class="post-count">Blog 全站共 1.2k 字</span>
+</div>
+
 
 
         

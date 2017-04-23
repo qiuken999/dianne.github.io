@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code利用好 hexo server 命令footer 不能固定在底端 bug 解决">
+<meta name="description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决">
 <meta name="keywords" content="Hexo,Disqus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 优化 Blog 设置">
 <meta property="og:url" content="http://yoursite.com/2017/04/22/Hexo 优化 Blog 设置/index.html">
 <meta property="og:site_name" content="梅一树">
-<meta property="og:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code利用好 hexo server 命令footer 不能固定在底端 bug 解决">
-<meta property="og:updated_time" content="2017-04-23T03:51:04.000Z">
+<meta property="og:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决">
+<meta property="og:updated_time" content="2017-04-23T20:41:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 优化 Blog 设置">
-<meta name="twitter:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code利用好 hexo server 命令footer 不能固定在底端 bug 解决">
+<meta name="twitter:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决">
 
 
 
@@ -351,6 +351,26 @@
           
           
 
+<span class="post-time">
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">字数统计: </span>
+<span class="post-count">543 (字)</span>
+
+</span>
+
+<span class="post-time">
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+<i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">阅读时长: </span>
+<span class="post-count">2 (分)</span>
+
+</span>
+
           
 
           
@@ -367,7 +387,8 @@
       
 
       
-        <h2 id="Disqus-评论设置问题，NexT-下不用添加-Universal-Code"><a href="#Disqus-评论设置问题，NexT-下不用添加-Universal-Code" class="headerlink" title="Disqus 评论设置问题，NexT 下不用添加 Universal Code"></a>Disqus 评论设置问题，NexT 下不用添加 Universal Code</h2><h2 id="利用好-hexo-server-命令"><a href="#利用好-hexo-server-命令" class="headerlink" title="利用好 hexo server 命令"></a>利用好 <code>hexo server</code> 命令</h2><h2 id="footer-不能固定在底端-bug-解决"><a href="#footer-不能固定在底端-bug-解决" class="headerlink" title="footer 不能固定在底端 bug 解决"></a>footer 不能固定在底端 bug 解决</h2><a id="more"></a>
+        <p><strong> Disqus 评论设置问题，NexT 下不用添加 Universal Code </strong><br><strong> 利用好 <code>hexo server</code> 命令 </strong><br><strong> footer 不能固定在底端 bug 解决 </strong></p>
+<a id="more"></a>
 <p>花了很长时间设置成功。<strong>期间因未能利用好「本地预览」功能而走入误区</strong></p>
 <pre><code>`hexo clean &amp;&amp; hexo g &amp;&amp; hexo s`
 </code></pre><p>之前对于 <code>hexo s</code> 与 <code>hexo d</code> 命令没有明确的区别意识，也不熟悉搭建 Blog 的体系。总是直接 deploy 然后多刷新几遍，结果让延迟效果把自己弄得混乱。幸好及时意识到错误，检查修改代码的工作量也不大。第一次加载 Disqus 时的延迟让我以为需要添加 Universal Code 才可实现，但如果使用 <code>hexo s</code> 指令，则会看到「评论区」已然在<strong>「非首页」</strong>的页面里出现。再次多处尝试添加 Universal Code 给我自己造成了很大的混乱，最后还得一一删除。</p>
@@ -483,17 +504,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -555,22 +567,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Disqus-评论设置问题，NexT-下不用添加-Universal-Code"><span class="nav-number">1.</span> <span class="nav-text">Disqus 评论设置问题，NexT 下不用添加 Universal Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用好-hexo-server-命令"><span class="nav-number">2.</span> <span class="nav-text">利用好 hexo server 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#footer-不能固定在底端-bug-解决"><span class="nav-number">3.</span> <span class="nav-text">footer 不能固定在底端 bug 解决</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

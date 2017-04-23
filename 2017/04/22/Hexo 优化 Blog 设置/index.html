@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="评论设置 Disqus花了很长时间设置。之前无法显示的重点原因在于1. themes，当前 themes 为 next。而 next 需要自己加入 Universal Code。2. 「首页」和「文章」的区别。 首先注册个 Disqus 账号，add to your website， 设置 URL 和shortname 并记住后者。然后在 _config.yml 里搜索到 disqus 字段， 修">
+<meta name="description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code利用好 hexo server 命令footer 不能固定在底端 bug 解决">
 <meta name="keywords" content="Hexo,Disqus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 优化 Blog 设置">
 <meta property="og:url" content="http://yoursite.com/2017/04/22/Hexo 优化 Blog 设置/index.html">
 <meta property="og:site_name" content="梅一树">
-<meta property="og:description" content="评论设置 Disqus花了很长时间设置。之前无法显示的重点原因在于1. themes，当前 themes 为 next。而 next 需要自己加入 Universal Code。2. 「首页」和「文章」的区别。 首先注册个 Disqus 账号，add to your website， 设置 URL 和shortname 并记住后者。然后在 _config.yml 里搜索到 disqus 字段， 修">
-<meta property="og:updated_time" content="2017-04-22T20:44:16.000Z">
+<meta property="og:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code利用好 hexo server 命令footer 不能固定在底端 bug 解决">
+<meta property="og:updated_time" content="2017-04-23T03:46:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 优化 Blog 设置">
-<meta name="twitter:description" content="评论设置 Disqus花了很长时间设置。之前无法显示的重点原因在于1. themes，当前 themes 为 next。而 next 需要自己加入 Universal Code。2. 「首页」和「文章」的区别。 首先注册个 Disqus 账号，add to your website， 设置 URL 和shortname 并记住后者。然后在 _config.yml 里搜索到 disqus 字段， 修">
+<meta name="twitter:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code利用好 hexo server 命令footer 不能固定在底端 bug 解决">
 
 
 
@@ -367,10 +367,23 @@
       
 
       
-        <h2 id="评论设置-Disqus"><a href="#评论设置-Disqus" class="headerlink" title="评论设置 Disqus"></a>评论设置 Disqus</h2><p>花了很长时间设置。<strong>之前无法显示的重点原因在于</strong><br><strong>1. themes，当前 themes 为 next。而 next 需要自己加入 Universal Code。</strong><br><strong>2. 「首页」和「文章」的区别。</strong></p>
-<p>首先注册个 Disqus 账号，add to your website， 设置 URL 和shortname 并记住后者。然后在 _config.yml 里搜索到 disqus 字段， 修改 enable 并添加 shortname。到此为止网上教程很详尽。可是我的评论区还是无法显示。</p>
-<p>Solution:<br>在 themes/next/layout 目录下找到 page.swig 打开，最下面的 endif 语句后添加 Disqus 设置时提供的 Universal Code。</p>
+        <h2 id="Disqus-评论设置问题，NexT-下不用添加-Universal-Code"><a href="#Disqus-评论设置问题，NexT-下不用添加-Universal-Code" class="headerlink" title="Disqus 评论设置问题，NexT 下不用添加 Universal Code"></a>Disqus 评论设置问题，NexT 下不用添加 Universal Code</h2><h2 id="利用好-hexo-server-命令"><a href="#利用好-hexo-server-命令" class="headerlink" title="利用好 hexo server 命令"></a>利用好 <code>hexo server</code> 命令</h2><h2 id="footer-不能固定在底端-bug-解决"><a href="#footer-不能固定在底端-bug-解决" class="headerlink" title="footer 不能固定在底端 bug 解决"></a>footer 不能固定在底端 bug 解决</h2><a id="more"></a>
+<p>花了很长时间设置成功。<strong>期间因未能利用好「本地预览」功能而走入误区</strong></p>
+<pre><code>`hexo clean &amp;&amp; hexo g &amp;&amp; hexo s`
+之前对于 `hexo s` 与 `hexo d` 命令没有明确的区别意识，也不熟悉搭建 Blog 的体系。总是直接 deploy 然后多刷新几遍，结果让延迟效果把自己弄得混乱。幸好及时意识到错误，检查修改代码的工作量也不大。第一次加载 Disqus 时的延迟让我以为需要添加 Universal Code 才可实现，但如果使用 `hexo s` 指令，则会看到「评论区」已然在__「非首页」__的页面里出现。再次多处尝试添加 Universal Code 给我自己造成了很大的混乱，最后还得一一删除。
 
+所以设置 Disqus 只需要在其官网创帐号，add to your site 然后设置相关 URL、shortname 等，再回到本地修改 _config.yml 文件。我分别在站点和 themes 里的两个 _config.yml 都添加修改了相关内容，前者添加shortname，后者在 disqus 字段里 enable 并填写 shortname 即可。
+
+「分类」和「标签」可在 index.md 文件里写入 `comments: false` 来取消评论。
+
+
+
+评论区域修改好了。我的 footer 位置又出了问题，「所有文章」里的 footer 都未能固定在底端，如果文章长度超出屏幕需要滚动阅览，footer 则会停留在原本的屏幕下方，也就是遮盖在文章中间。可以锁定是 post 相关文件的错误。搜索查询发现相关问题很少，相似经历更少且没找到有效solution（缩小范围到自己 code 问题），又尝试了删除改动 footer 未果，我意识到可能是因我之前乱添 Universal Code 遗留的问题，很大可能误删或者少删了内容。
+
+于是我打开 NexT 主题在 GitHub 上的相关代码对照了两个文件，果然发现少删除一个 `&lt;/div&gt;` 造成区域混乱。
+
+问题解决。Disqus 成功添加。
+</code></pre><h2 id="技术之外"><a href="#技术之外" class="headerlink" title="技术之外"></a>技术之外</h2>
       
     </div>
 
@@ -559,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#评论设置-Disqus"><span class="nav-number">1.</span> <span class="nav-text">评论设置 Disqus</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Disqus-评论设置问题，NexT-下不用添加-Universal-Code"><span class="nav-number">1.</span> <span class="nav-text">Disqus 评论设置问题，NexT 下不用添加 Universal Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用好-hexo-server-命令"><span class="nav-number">2.</span> <span class="nav-text">利用好 hexo server 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#footer-不能固定在底端-bug-解决"><span class="nav-number">3.</span> <span class="nav-text">footer 不能固定在底端 bug 解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术之外"><span class="nav-number">4.</span> <span class="nav-text">技术之外</span></a></li></ol></div>
             
 
           </div>

@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
+<meta name="description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  Footer 不能固定在底端 Bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
 <meta name="keywords" content="Hexo,Disqus,WordCount">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 优化 Blog 设置">
 <meta property="og:url" content="http://yoursite.com/2017/04/22/Hexo 优化 Blog 设置/index.html">
 <meta property="og:site_name" content="梅一树">
-<meta property="og:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
+<meta property="og:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  Footer 不能固定在底端 Bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/04/24/58fd190976f8f.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/04/24/58fd220bd5af5.png">
-<meta property="og:updated_time" content="2017-04-23T22:16:12.000Z">
+<meta property="og:updated_time" content="2017-04-23T22:19:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 优化 Blog 设置">
-<meta name="twitter:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  footer 不能固定在底端 bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
+<meta name="twitter:description" content="Disqus 评论设置问题，NexT 下不用添加 Universal Code  利用好 hexo server 命令  Footer 不能固定在底端 Bug 解决  WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写  「 Template render error 」问题">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2017/04/24/58fd190976f8f.png">
 
 
@@ -355,6 +355,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -400,7 +405,7 @@
       
 
       
-        <p><strong> Disqus 评论设置问题，NexT 下不用添加 Universal Code </strong><br><strong> 利用好 <code>hexo server</code> 命令 </strong><br><strong> footer 不能固定在底端 bug 解决 </strong><br><strong> WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写 </strong><br><strong> 「 Template render error 」问题 </strong><br><a id="more"></a></p>
+        <p><strong> Disqus 评论设置问题，NexT 下不用添加 Universal Code </strong><br><strong> 利用好 <code>hexo server</code> 命令 </strong><br><strong> Footer 不能固定在底端 Bug 解决 </strong><br><strong> WordCount 插件，NexT 下已囊括，可选择直接使用，不必从头编写 </strong><br><strong> 「 Template render error 」问题 </strong><br><a id="more"></a></p>
 <h2 id="1-Disqus-评论区"><a href="#1-Disqus-评论区" class="headerlink" title="1. Disqus 评论区"></a>1. Disqus 评论区</h2><p>花了很长时间设置成功。<strong>期间因未能利用好「本地预览」功能而走入误区</strong></p>
 <pre><code>`hexo clean &amp;&amp; hexo g &amp;&amp; hexo s`
 </code></pre><p>之前对于 <code>hexo s</code> 与 <code>hexo d</code> 命令没有明确的区别意识，也不熟悉搭建 Blog 的体系。总是直接 deploy 然后多刷新几遍，结果让延迟效果把自己弄得混乱。幸好及时意识到错误，检查修改代码的工作量也不大。第一次加载 Disqus 时的延迟让我以为需要添加 Universal Code 才可实现，但如果使用 <code>hexo s</code> 指令，则会看到「评论区」已然在<strong>「非首页」</strong>的页面里出现。再次多处尝试添加 Universal Code 给我自己造成了很大的混乱，最后还得一一删除。</p>
@@ -657,6 +662,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
         
       </div>
